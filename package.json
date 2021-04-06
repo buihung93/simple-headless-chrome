@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "documentation": "documentation readme lib/actions.js --section=Methods",
-    "build": "rm -rf build; babel lib -d build",
+    "-build": "rm -rf build; babel lib -d build",
     "watch": "babel --watch lib -d build",
-    "prepublish": "npm run build; npm run test",
-    "prepare": "npm run build",
-    "prepare-minor": "npm run test; npm version minor; git push; git push --tags; npm publish",
-    "prepare-patch": "npm run test; npm version patch; git push; git push --tags; npm publish",
+    "-prepublish": "npm run build; npm run test",
+    "-prepare": "npm run build",
+    "-prepare-minor": "npm run test; npm version minor; git push; git push --tags; npm publish",
+    "-prepare-patch": "npm run test; npm version patch; git push; git push --tags; npm publish",
     "preversion": "npm run -s documentation",
-    "test": "npm run build; DEBUG='HeadlessChrome' tap test 'build/test/**/*.js'"
+    "-test": "npm run build; DEBUG='HeadlessChrome' tap test 'build/test/**/*.js'"
   },
   "repository": {
     "type": "git",
