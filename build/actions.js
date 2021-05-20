@@ -2573,19 +2573,15 @@ exports.ajax = function () {
             if (typeof data === 'object') {
               requestData = objectToEncodedUri(data);
             }
-            console.log('past here #1');
             requestOptions = Object.assign({
               contentType: 'application/json',
               timeout: this.options.browser.loadPageTimeout
             }, options);
 
 
-            console.log('past here #2');
-
             return _context43.abrupt('return', this.evaluateAsync(function (url, action, data, options) {
               return new Promise(function (resolve, reject) {
                 var xhr = new XMLHttpRequest();
-                console.log('past here #3');
                 xhr.open(action, url);
                 xhr.setRequestHeader('Content-Type', options.contentType);
                 xhr.onload = function (e) {
